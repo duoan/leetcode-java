@@ -26,9 +26,39 @@ import java.util.HashMap;
 //.   space: O(n) // merge sort, O(logn) quick sort
 // 3. hashmap to cache the seen num:index [key: num, value: index], lookup the target - nums[i] in the map, if found return the {map[target-nums[i]], i}
 //.   O(n), O(n)
+
+
+// test case
+
+// [1,2,3,1], 5 => [1,2]
+// [1,2,3,1], 2 => [0,3]
+// [0], 1 => throw IllegalArgumentException
+// null, 1 => throw IllegalArgumentException
+
+class TwoSumTest {
+    
+    void should_throw_IllegalArgumentException_when_nums_is_null() {
+
+    }
+
+    void should_throw_IllegalArgumentException_when_nums_has_less_than_2_elements() {
+
+    }
+
+    void should_return_expected_result() {
+        
+    }
+}
+
+
 public class P0001_Two_Sum {
 
     public int[] twoSum(int[] nums, int target) {
+        // input validation
+        if (nums == null || nums.length < 2) {
+            throw new IllegalArgumentException("Invalid nums, which is not allowed be null and has more than 2 elements.");
+        }
+
         // 首先构建一个哈希表，用来存放数组的元素值以及索引值
         // 其中 key 是数组中的元素值
         // value 为数组中元素值的索引
